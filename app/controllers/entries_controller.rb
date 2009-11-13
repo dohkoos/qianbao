@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+  before_filter :login_required
+
   # GET /entries
   # GET /entries.xml
   def index
@@ -7,17 +9,6 @@ class EntriesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @entries }
-    end
-  end
-
-  # GET /entries/1
-  # GET /entries/1.xml
-  def show
-    @entry = Entry.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @entry }
     end
   end
 
@@ -45,8 +36,8 @@ class EntriesController < ApplicationController
     respond_to do |format|
       if @entry.save
         flash[:notice] = 'Entry was successfully created.'
-        format.html { redirect_to(@entry) }
-        format.xml  { render :xml => @entry, :status => :created, :location => @entry }
+        format.html { redirect_to(entries_url) }
+        format.xml  { head :ok }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @entry.errors, :status => :unprocessable_entity }
@@ -62,7 +53,7 @@ class EntriesController < ApplicationController
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
         flash[:notice] = 'Entry was successfully updated.'
-        format.html { redirect_to(@entry) }
+        format.html { redirect_to(entries_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
