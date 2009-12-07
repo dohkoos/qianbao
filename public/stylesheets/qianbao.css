@@ -1,0 +1,17 @@
+#container {
+  width: 960px;
+  margin: 5px auto;
+}
+
+#header {
+  height: 2.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+#content {
+}
+
+#footer {
+  border-top: 1px solid #ccc;
+  text-align: center;
+}

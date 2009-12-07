@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Qianbao: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'qianbao' %>
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      <%= link_to 'Home', root_path %>
+      <% if logged_in? %>
+        <%= link_to 'All entries', entries_path %>
+        <strong>You are logged in as <%=h current_user.login %></strong>
+        <%= link_to 'Logout', logout_path %>
+      <% else %>
+        <%= link_to 'Login', login_path %>
+        <%= link_to 'Sign up', signup_path %>
+      <% end %>
+    </div>
+
+    <div id="content">
+      <p style="color: green"><%= flash[:notice] %></p>
+
+      <%= yield %>
+    </div>
+
+    <div id="footer">&copy; 2009</div>
+  </div>
+</body>
+</html>
