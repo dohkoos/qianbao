@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.xml
   def index
-    @entries = Entry.all
+    @entries = current_user.entries.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,13 +25,14 @@ class EntriesController < ApplicationController
 
   # GET /entries/1/edit
   def edit
-    @entry = Entry.find(params[:id])
+    @entry = current_user.entries.find(params[:id])
   end
 
   # POST /entries
   # POST /entries.xml
   def create
     @entry = Entry.new(params[:entry])
+    @entry.user = current_user
 
     respond_to do |format|
       if @entry.save
@@ -48,7 +49,7 @@ class EntriesController < ApplicationController
   # PUT /entries/1
   # PUT /entries/1.xml
   def update
-    @entry = Entry.find(params[:id])
+    @entry = current_user.entries.find(params[:id])
 
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
@@ -65,7 +66,7 @@ class EntriesController < ApplicationController
   # DELETE /entries/1
   # DELETE /entries/1.xml
   def destroy
-    @entry = Entry.find(params[:id])
+    @entry = current_user.entries.find(params[:id])
     @entry.destroy
 
     respond_to do |format|

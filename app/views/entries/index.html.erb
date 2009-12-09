@@ -9,7 +9,7 @@
     <th>Action</th>
   </tr>
 
-<% @entries.each do |entry| %>
+  <% @entries.each do |entry| %>
   <tr>
     <td><%=h entry.effective_date %></td>
     <td><%=h entry.amount %></td>
@@ -20,7 +20,7 @@
       <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %>
     </td>
   </tr>
-<% end %>
+  <% end %>
 </table>
 
 <%= link_to 'New entry', new_entry_path %>
