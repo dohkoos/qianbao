@@ -4,6 +4,11 @@
   <%= f.error_messages %>
 
   <p>
+    <%= f.label :effective_date %><br />
+    <%= f.date_select :effective_date %>
+  </p>
+
+  <p>
     <%= f.label :amount %><br />
     <%= f.text_field :amount %>
   </p>
