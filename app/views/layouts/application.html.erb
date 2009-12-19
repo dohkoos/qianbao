@@ -8,21 +8,12 @@
   <title>Qianbao: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
   <%= stylesheet_link_tag 'qianbao' %>
+  <%= stylesheet_link_tag 'table' %>
 </head>
 
 <body>
   <div id="container">
-    <div id="header">
-      <%= link_to 'Home', root_path %>
-      <% if logged_in? %>
-        <%= link_to 'All entries', entries_path %>
-        <strong>You are logged in as <%=h current_user.login %></strong>
-        <%= link_to 'Logout', logout_path %>
-      <% else %>
-        <%= link_to 'Login', login_path %>
-        <%= link_to 'Sign up', signup_path %>
-      <% end %>
-    </div>
+    <%= render :partial => 'layouts/header' %>
 
     <div id="content">
       <p style="color: green"><%= flash[:notice] %></p>
@@ -30,7 +21,7 @@
       <%= yield %>
     </div>
 
-    <div id="footer">&copy; 2009</div>
+    <%= render :partial => 'layouts/footer' %>
   </div>
 </body>
 </html>

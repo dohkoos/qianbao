@@ -1,26 +1,30 @@
 <h1>Listing entries</h1>
 
 <table>
-  <tr>
-    <th>Date</th>
-    <th>Amount</th>
-    <th>Tags</th>
-    <th>Comment</th>
-    <th>Action</th>
-  </tr>
+  <thead>
+    <tr>
+      <th class="center">Date</th>
+      <th class="center">Amount</th>
+      <th class="center">Tags</th>
+      <th class="center">Comment</th>
+      <th class="center">Action</th>
+    </tr>
+  </thead>
 
-  <% @entries.each do |entry| %>
-  <tr>
-    <td><%=h entry.effective_date %></td>
-    <td><%=h entry.amount %></td>
-    <td><%=h entry.tags %></td>
-    <td><%=h entry.comment %></td>
-    <td>
-      <%= link_to 'Edit', edit_entry_path(entry) %>
-      <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %>
-    </td>
-  </tr>
-  <% end %>
+  <tbody>
+    <% @entries.each do |entry| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td class="center"><%=h entry.effective_date %></td>
+      <td class="right"><%=h number_to_currency(entry.amount) %></td>
+      <td><%=h entry.tags %></td>
+      <td><%=h entry.comment %></td>
+      <td class="center">
+        <%= link_to 'Edit', edit_entry_path(entry) %>
+        <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <%= link_to 'New entry', new_entry_path %>
