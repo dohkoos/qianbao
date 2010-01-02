@@ -3,11 +3,11 @@
 <table>
   <thead>
     <tr>
-      <th class="center">Date</th>
-      <th class="center">Amount</th>
-      <th class="center">Tags</th>
-      <th class="center">Comment</th>
-      <th class="center">Action</th>
+      <th class="center"><%= t(:effective_date) %></th>
+      <th class="center"><%= t(:amount) %></th>
+      <th class="center"><%= t(:tags) %></th>
+      <th class="center"><%= t(:comment) %></th>
+      <th class="center"><%= t(:action) %></th>
     </tr>
   </thead>
 
@@ -19,8 +19,8 @@
       <td><%=h entry.tags %></td>
       <td><%=h entry.comment %></td>
       <td class="center">
-        <%= link_to 'Edit', edit_entry_path(entry) %>
-        <%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %>
+        <%= link_to t(:edit), edit_entry_path(entry) %>
+        <%= link_to t(:destroy), entry, :confirm => t(:are_you_sure), :method => :delete %>
       </td>
     </tr>
     <% end %>

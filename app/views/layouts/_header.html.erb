@@ -1,11 +1,14 @@
 <div id="header">
-  <%= link_to 'Home', root_path %>
+  <%= link_to t(:home), root_path %>
   <% if logged_in? %>
-    <%= link_to 'All entries', entries_path %>
+    <%= link_to t(:entries), entries_path %>
     <strong>You are logged in as <%= current_user.login %></strong>
-    <%= link_to 'Logout', logout_path %>
+    <%= link_to t(:logout), logout_path %>
   <% else %>
-    <%= link_to 'Login', login_path %>
-    <%= link_to 'Sign Up', signup_path %>
+    <%= link_to t(:login), login_path %>
+    <%= link_to t(:signup), signup_path %>
   <% end %>
+
+  <%= link_to t(:chinese), :locale => 'zh' %>
+  <%= link_to t(:english), :locale => 'en' %>
 </div>
