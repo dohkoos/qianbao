@@ -16,7 +16,7 @@
     <tr class="<%= cycle('odd', 'even') %>">
       <td class="center"><%=h entry.effective_date %></td>
       <td class="right"><%=h number_to_currency(entry.amount) %></td>
-      <td><%=h entry.tags %></td>
+      <td><%=h entry.tag_list %></td>
       <td><%=h entry.comment %></td>
       <td class="center">
         <%= link_to t(:edit), edit_entry_path(entry) %>
