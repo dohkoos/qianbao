@@ -32,6 +32,11 @@ zh:
   back: "返回"
   are_you_sure: "你确定吗？"
 
+  # Pagination
+  previous: "&laquo; 前一页"
+  next: "后一页 &raquo;"
+  total_entries: "记录总数"
+
   date:
     formats:
       # Use the strftime parameters for formats.

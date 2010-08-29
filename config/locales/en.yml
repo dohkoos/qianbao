@@ -32,6 +32,11 @@ en:
   back: "Back"
   are_you_sure: "Are you sure?"
 
+  # Pagination
+  previous: "&laquo; Previous"
+  next: "Next &raquo;"
+  total_entries: "Total entries"
+
   date:
     formats:
       # Use the strftime parameters for formats.

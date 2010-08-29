@@ -1,5 +1,9 @@
 <h1>Listing entries</h1>
 
+<%= t(:total_entries) %>: <%= @entries.total_entries %>
+
+<%= will_paginate @entries %>
+
 <table>
   <thead>
     <tr>
@@ -26,5 +30,7 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @entries %>
 
 <%= link_to 'New entry', new_entry_path %>
