@@ -12,10 +12,6 @@ en:
   remember_me: "Remember me"
   forgot_password: "Forgot password?"
 
-  # Language
-  chinese: "Chinese"
-  english: "English"
-
   # Entry
   effective_date: "Date"
   amount: "Amount"

@@ -4,8 +4,19 @@
 }
 
 #header {
-  height: 2.5em;
   border-bottom: 1px solid #ccc;
+}
+
+#header #usernav {
+  margin-top: 8px;
+  margin-right: 8px;
+  text-align: right;
+}
+
+#header #langnav {
+  margin-top: 8px;
+  margin-right: 8px;
+  text-align: right;
 }
 
 #content {

@@ -6,9 +6,11 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title><%= t(:site_name) %></title>
+  <%= stylesheet_link_tag 'blueprint/screen.css', :media => 'screen, projection' %>
+  <%= stylesheet_link_tag 'blueprint/print.css', :media => 'print' %>
+  <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie.css', :media => 'screen, projection' %><![endif]-->
   <%= stylesheet_link_tag 'scaffold' %>
   <%= stylesheet_link_tag 'qianbao' %>
-  <%= stylesheet_link_tag 'table' %>
   <%= stylesheet_link_tag 'pagination' %>
 </head>
 
@@ -16,7 +18,7 @@
   <div id="container">
     <%= render :partial => 'layouts/header' %>
 
-    <div id="content">
+    <div id="content" class="span-24 last">
       <p style="color: green"><%= flash[:notice] %></p>
 
       <%= yield %>

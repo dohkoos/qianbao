@@ -1,14 +1,18 @@
-<div id="header">
-  <%= link_to t(:home), root_path %>
-  <% if logged_in? %>
-    <%= link_to t(:entries), entries_path %>
-    <strong>You are logged in as <%= current_user.login %></strong>
-    <%= link_to t(:logout), logout_path %>
-  <% else %>
-    <%= link_to t(:login), login_path %>
-    <%= link_to t(:signup), signup_path %>
-  <% end %>
+<div id="header" class="span-24 last">
+  <div id="usernav">
+    <%= link_to t(:home), root_path %>
+    <% if logged_in? %>
+      <%= link_to t(:entries), entries_path %>
+      <strong>You are logged in as <%= current_user.login %></strong>
+      <%= link_to t(:logout), logout_path %>
+    <% else %>
+      <%= link_to t(:login), login_path %>
+      <%= link_to t(:signup), signup_path %>
+    <% end %>
+  </div>
 
-  <%= link_to t(:chinese), :locale => 'zh' %>
-  <%= link_to t(:english), :locale => 'en' %>
+  <div id="langnav">
+    <%= link_to image_tag('flag/zh-CN.png', :border => 0), :locale => 'zh' %>
+    <%= link_to image_tag('flag/en-US.png', :border => 0), :locale => 'en' %>
+  </div>
 </div>

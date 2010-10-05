@@ -12,10 +12,6 @@ zh:
   remember_me: "记住我"
   forgot_password: "忘记密码了？"
 
-  # Language
-  chinese: "中文"
-  english: "英文"
-
   # Entry
   effective_date: "日期"
   amount: "金额"
