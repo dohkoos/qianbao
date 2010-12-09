@@ -5,6 +5,8 @@ ActionController::Routing::Routes.draw do |map|
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   map.forgot_password '/forgot_password', :controller => 'users', :action => 'forgot_password'
   map.reset_password '/reset_password/:reset_code', :controller => 'users', :action => 'reset_password'
+  map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
+  map.update_captcha '/update_captcha', :controller => 'sessions', :action => 'update_captcha'
 
   map.resources :users
 

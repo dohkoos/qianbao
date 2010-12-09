@@ -1,5 +1,8 @@
 # This controller handles the login/logout function of the site.
 class SessionsController < ApplicationController
+  def update_captcha
+    render :layout => false
+  end
 
   def new
   end
@@ -7,7 +10,7 @@ class SessionsController < ApplicationController
   def create
     logout_keeping_session!
     user = User.authenticate(params[:login], params[:password])
-    if user
+    if simple_captcha_valid? && user
       # Protects against session fixation attacks, causes request forgery
       # protection if user resubmits an earlier form using back
       # button. Uncomment if you understand the tradeoffs.

@@ -33,6 +33,10 @@ zh:
   next: "后一页 &raquo;"
   total_entries: "记录总数"
 
+  # Captcha
+  captcha_label: "请输入图片中的验证码"
+  cannot_recognize: "看不清，换一个"
+
   date:
     formats:
       # Use the strftime parameters for formats.

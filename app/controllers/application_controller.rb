@@ -4,6 +4,7 @@
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   include ExceptionNotifiable
+  include SimpleCaptcha::ControllerHelpers
 
   before_filter :set_locale
 

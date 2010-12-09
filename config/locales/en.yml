@@ -33,6 +33,10 @@ en:
   next: "Next &raquo;"
   total_entries: "Total entries"
 
+  # Captcha
+  captcha_label: "Please type the text from the image."
+  cannot_recognize: "I cannot recognize."
+
   date:
     formats:
       # Use the strftime parameters for formats.

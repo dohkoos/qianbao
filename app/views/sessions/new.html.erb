@@ -10,6 +10,21 @@
     <%= label_tag t(:password) %><br/>
     <%= password_field_tag 'password', nil %>
   </p>
+
+  <div id="captcha_image">
+    <%= show_simple_captcha(:label => t(:captcha_label)) %>
+  </div>
+  <a href="javascript:void(0);" id="recognize_captcha"><%= t(:cannot_recognize) %></a>
+  <script type="text/javascript">
+    $("#recognize_captcha").click(function() {
+      $.ajax({
+        url: "<%= url_for(:action => 'update_captcha') %>",
+        success: function(response) {
+          $("#captcha_image").html(response);
+        }
+      });
+    });
+  </script>
   
   <!-- Uncomment this if you want this functionality
   <p>
