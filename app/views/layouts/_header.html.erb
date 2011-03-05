@@ -3,7 +3,7 @@
     <%= link_to t(:home), root_path %>
     <% if logged_in? %>
       <%= link_to t(:entries), entries_path %>
-      <strong>You are logged in as <%= current_user.login %></strong>
+      <strong>You are logged in as <%= current_user.email %></strong>
       <%= link_to t(:logout), logout_path %>
     <% else %>
       <%= link_to t(:login), login_path %>
